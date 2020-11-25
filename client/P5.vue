@@ -44,32 +44,14 @@ export default {
 				world = engine.world
 				// Engine.run(engine)
 				boundaries.push(
-					new Boundary(
-						p.width / 2,
-						p.height,
-						p.width,
-						50,
-						0,
-						p,
-						world
-					)
+					new Boundary(p.width / 2, p.height, p.width, 50, 0, p, world)
 				)
-				boundaries.push(
-					new Boundary(p.width / 2, 0, p.width, 50, 0, p, world)
-				)
+				boundaries.push(new Boundary(p.width / 2, 0, p.width, 50, 0, p, world))
 				boundaries.push(
 					new Boundary(0, p.height / 2, 50, p.height, 0, p, world)
 				)
 				boundaries.push(
-					new Boundary(
-						p.width,
-						p.height / 2,
-						50,
-						p.height,
-						0,
-						p,
-						world
-					)
+					new Boundary(p.width, p.height / 2, 50, p.height, 0, p, world)
 				)
 
 				let canvasMouse = Mouse.create(canvas.elt)
@@ -82,19 +64,7 @@ export default {
 			p.mouseDragged = () => {
 				if (mConstraint.body) return
 				// boxes.push(new Box(p.mouseX, p.mouseY + 40, 20, 20, p, world))
-				if (p.mouseX % 10 === 0) {
-					dice.push(
-						new Die(
-							p.mouseX,
-							p.mouseY + 60,
-							30,
-							30,
-							dieImage,
-							p,
-							world
-						)
-					)
-				}
+				dice.push(new Die(p.mouseX, p.mouseY + 60, 30, 30, dieImage, p, world))
 
 				pMouseX = p.mouseX
 				pMouseY = p.mouseY
@@ -138,6 +108,6 @@ export default {
 			const instance = new P5(s)
 		})
 		return {}
-	}
+	},
 }
 </script>
